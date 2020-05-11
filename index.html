@@ -54,13 +54,12 @@
         context.setAttr('fillStyle', 'white');
         context.fillText(text, background.getStage().width() / 2, 40);
       }
-      /*function anipos(){
+      function anipos(){
         var n;
-        n = Math.random()*
-      };
-      function check( n ){
+        n = Math.round( Math.random()*500 );
+        return n;
+      }
 
-      };*/
       function initStage(images) {
         var stage = new Konva.Stage({
           container: 'container',
@@ -90,8 +89,8 @@
             y: 70
           },
           other: {
-            x: 90,
-            y: 50
+            x: anipos(),
+            y: anipos()
           }
           
         };
@@ -151,7 +150,7 @@
                 animalLayer.draw();
                 animal.inRightPlace = true;
 
-                if (++score >= 4) {
+                if (++score >= 5) {
                   var text = 'You win! Enjoy your booty!';
                   drawBackground(background, images.beach, text);
                 }
